@@ -8,7 +8,7 @@ let highscore;
 let highscoreText;
 let player;
 let gravity;
-let obsticles = [];
+let obstacles = [];
 let gameSpeed;
 let keys = {};
 
@@ -129,9 +129,9 @@ class Text {
 let stopGame = 0;
 function Stop() {
     obstacles = 0;
-    score = 0;
+    score = 'START GAME';
     spawnTimer = initialSpawnTimer;
-    gameSpeed = 0;
+    gameSpeed;
     highscore = 0;
     // window.localStorage.setItem('highscore', highscore);
 }
@@ -167,7 +167,7 @@ function spawnObstacles() {
         obstacle.y -= player.originalHeight - 10;
     }
 
-    obsticles.push(obstacle);
+    obstacles.push(obstacle);
 }
 
 
@@ -185,18 +185,18 @@ function Update() {
     spawnTimer--;
     if (spawnTimer <= 0) {
         spawnObstacles();
-        console.log(obsticles)
+        console.log(obstacles)
         spawnTimer = initialSpawnTimer - gameSpeed * 8
         if (spawnTimer < 60) {
             spawnTimer = 60;
         }
     }
 
-    for (let i = 0; i < obsticles.length; i++) {
-        let o = obsticles[i];
+    for (let i = 0; i < obstacles.length; i++) {
+        let o = obstacles[i];
 
         if (o.x + o.width < 0) {
-            obsticles.splice(i, 1);
+            obstacles.splice(i, 1);
         }
 
         if (player.x < o.x + o.w && player.x + player.w > o.x && player.y < o.y + o.h && player.y + player.h > o.y) {

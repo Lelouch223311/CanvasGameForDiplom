@@ -257,7 +257,7 @@ h1 {
 	} 
 }
 
-/*! Управление справо от Игры */
+/*! Управление и админка справо от Игры */
 
 .control{
     position: absolute;
@@ -270,6 +270,19 @@ h1 {
     display: flex;
     width: 200%;
 }
+
+.typing-demo-two{
+
+}
+.adminpanel{
+    position: absolute;
+    display: flex;
+    margin: -10em 65em auto;
+    user-select: none;
+}
+
+
+
 
 
 /*? */
