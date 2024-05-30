@@ -141,7 +141,7 @@ function Start() {
 
     ctx.font = "20px sans-serif";
 
-    gameSpeed = 3;
+    gameSpeed = 4;
     gravity = 1;
     score = 0;
     highscore = 0;
