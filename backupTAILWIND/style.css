@@ -55,8 +55,6 @@ body {
 	min-height: 97vh; 
 	padding: 3em 0; 
 	font-family: Arial, sans-serif; 
-	background-color: black;
-	color:white;
 } 
 
 
@@ -263,13 +261,13 @@ h1 {
 .control{
     position: absolute;
     display: inline;
-    /* margin: 2em 25em auto; */
+    margin: 2em 25em auto;
     user-select: none;
 
 }
 #imgFirst{
     display: flex;
-    width: 300px;
+    width: 200%;
 }
 
 .typing-demo-two{

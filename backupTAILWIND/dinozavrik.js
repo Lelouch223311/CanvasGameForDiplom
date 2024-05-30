@@ -25,7 +25,6 @@ const ctx = canvas.getContext('2d');
 
 let score;
 let scoreText;
-let gameSpeedText;
 let highscore;
 let highscoreText;
 let player;
@@ -41,26 +40,21 @@ document.addEventListener('keydown', function (evt) {
 document.addEventListener('keyup', function (evt) {
     keys[evt.code] = false;
 })
-// document.addEventListener('keyleft', function (evt) {
-//     keys[evt.code] = false;
-// })
 //? Ивенты //
 class Player {
 
-    constructor(x, y, w, h, c, l) {
+    constructor(x, y, w, h, c) {
         this.x = x;
         this.y = y;
         this.w = w;
         this.h = h;
         this.c = c;
-        this.l = l;
 
         this.dy = 0;
         this.jumpForce = 15;
         this.originalHeight = h;
         this.grounded = false;
         this.jumpTimer = 0;
-        this.gameSpeedmod = 0;
     }
 
     Animate() {
@@ -88,18 +82,6 @@ class Player {
             this.grounded = true;
             this.y = canvas.height - this.h;
         }
-
-        // Увеличение/Уменьшение скорости Игры [!]
-        // if(keys['ArrowLeft']){
-        //     this.gameSpeedmod++;
-        //     this.gameSpeed++;
-        //     // console.log(`gamespeed++ ${gameSpeed}`)
-        // } else{
-        //     this.gameSpeedmod--;
-        //     gameSpeed--;
-        //     // console.log(`gamespeed-- ${gameSpeed}`)
-        // }
-
 
         this.Draw()
     }
@@ -173,7 +155,6 @@ function Start() {
     ctx.font = "20px sans-serif";
 
     gameSpeed = 4;
-
     gravity = 1;
     score = 0;
     highscore = 0;
@@ -183,10 +164,9 @@ function Start() {
 
     player = new Player(25, canvas.height - 150, 50, 50, '#FF5858')
     player.Draw();
-    //#212121
-    scoreText = new Text("Score: " + score, 25, 25, "left", "#00FF00", "20");
-    highscoreText = new Text("Highscore: " + highscore, canvas.width - 155, 25, "right", "#FF0000", "20")
-    // gameSpeedText = new Text("Game Speed lvl: " + gameSpeed, canvas.width - 25, 35, "right", "#FF0000", "20")
+
+    scoreText = new Text("Score: " + score, 25, 25, "left", "#212121", "20");
+    highscoreText = new Text("Highscore: " + highscore, canvas.width - 155, 25, "right", "#212121", "20")
 
     requestAnimationFrame(Update);
 }
@@ -256,13 +236,12 @@ function Update() {
     highscoreText.Draw()
 
     gameSpeed += 0.009;
-
 }
 // Сообщения
 
 let icon = {
     success:
-        '<span class="material-symbols-outlined" style="color:black;">task_alt</span>',
+        '<span class="material-symbols-outlined">task_alt</span>',
     danger:
         '<span class="material-symbols-outlined">error</span>',
     warning:
