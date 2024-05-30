@@ -38,13 +38,13 @@ class Player {
 
     Animate() {
         //Анимция прыжка (ну или почти))
-        if (keys['Space'] || keys['KeyW'] || keys['ArrowUp']) {
+        if (keys['KeyW'] || keys['ArrowUp']) {
             this.Jump()
         } else {
             this.jumpTimer = 0;
         }
 
-        if (keys['ShiftLeft'] || keys['KeyS'] || keys['ArrowDown']) {
+        if (keys['KeyS'] || keys['ArrowDown']) {
             this.h = this.originalHeight / 2;
         } else {
             this.h = this.originalHeight
