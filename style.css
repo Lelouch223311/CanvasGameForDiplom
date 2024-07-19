@@ -6,8 +6,10 @@
 
 canvas {
     /* display: block; */
-    width: 640px;
-    height: 400px;
+    /* width: 640px; */
+    /* height: 400px; */
+	width: 70%;
+	height: 100%;
 }
 
 
@@ -273,7 +275,7 @@ h1 {
 }
 
 .typing-demo-two{
-
+ /* poka pusto */
 }
 .adminpanel{
     position: absolute;
@@ -294,3 +296,12 @@ h1 {
 
 
 /*? Adaptiv end */
+
+/*! Окно игры  */
+
+.game{
+	width: 250%;
+}
+
+
+/*? Окно игры end */
